@@ -1,0 +1,242 @@
+/* 🔥 IMPORTS */
+@import './tailwind.css';
+@import './theme.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap');
+
+/* 🌍 RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🧠 BODY */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+/* 🔥 SCROLL */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 🚫 BLOQUEAR SCROLL HORIZONTAL */
+html, body {
+  overflow-x: hidden;
+}
+/* ===================================================== */
+/* 💎 LOGO ORO REAL */
+/* ===================================================== */
+
+.logo-gold {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.2rem;
+  letter-spacing: 1px;
+
+  background: linear-gradient(
+    90deg,
+    #d4af37,
+    #ffd700,
+    #fff3a0,
+    #ffd700,
+    #b8960b
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 6px rgba(255, 215, 0, 0.8),
+    0 0 12px rgba(255, 215, 0, 0.6);
+
+  position: relative;
+}
+
+/* ✨ BRILLO */
+.logo-gold::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.8),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: shine 3.5s infinite;
+}
+
+@keyframes shine {
+  0% { left: -60%; }
+  100% { left: 120%; }
+}
+
+/* ===================================================== */
+/* 🎬 ANIMACIONES */
+/* ===================================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* ===================================================== */
+/* 💡 BOTONES */
+/* ===================================================== */
+
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* ===================================================== */
+/* 🖼️ IMÁGENES */
+/* ===================================================== */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===================================================== */
+/* 🔥 SCROLLBAR */
+/* ===================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ff69b4, #ff1493);
+  border-radius: 10px;
+}
+
+/* ===================================================== */
+/* 📱 RESPONSIVE */
+/* ===================================================== */
+
+@media (max-width: 768px) {
+  .logo-gold {
+    font-size: 2rem;
+  }
+}
+
+/* ===================================================== */
+/* 💖 CORAZONES CON EFECTO VIENTO */
+/* ===================================================== */
+.heart-float {
+  position: absolute;
+  font-size: 13px;
+  opacity: 0;
+
+  animation: floatWind 4.5s ease-in-out infinite;
+
+  /* 💨 SUMAMOS movimiento del mouse */
+  transform: translateX(var(--mouse-x, 0));
+
+  filter: drop-shadow(0 0 6px rgba(255, 105, 180, 0.8));
+}
+/* 💎 POSICIONES (MUY DENSO Y DISTRIBUIDO) */
+.heart-0  { left: 3%; top: 85%; animation-delay: 0s; }
+.heart-1  { left: 8%; top: 70%; animation-delay: 0.05s; }
+.heart-2  { left: 12%; top: 65%; animation-delay: 0.1s; }
+.heart-3  { left: 18%; top: 80%; animation-delay: 0.15s; }
+.heart-4  { left: 22%; top: 60%; animation-delay: 0.2s; }
+
+.heart-5  { left: 28%; top: 85%; animation-delay: 0.25s; }
+.heart-6  { left: 32%; top: 70%; animation-delay: 0.3s; }
+.heart-7  { left: 36%; top: 75%; animation-delay: 0.35s; }
+.heart-8  { left: 42%; top: 60%; animation-delay: 0.4s; }
+.heart-9  { left: 48%; top: 85%; animation-delay: 0.45s; }
+
+.heart-10 { left: 52%; top: 70%; animation-delay: 0.5s; }
+.heart-11 { left: 58%; top: 80%; animation-delay: 0.55s; }
+.heart-12 { left: 62%; top: 60%; animation-delay: 0.6s; }
+.heart-13 { left: 68%; top: 90%; animation-delay: 0.65s; }
+.heart-14 { left: 72%; top: 65%; animation-delay: 0.7s; }
+
+.heart-15 { left: 78%; top: 75%; animation-delay: 0.75s; }
+.heart-16 { left: 82%; top: 60%; animation-delay: 0.8s; }
+.heart-17 { left: 88%; top: 85%; animation-delay: 0.85s; }
+.heart-18 { left: 92%; top: 70%; animation-delay: 0.9s; }
+.heart-19 { left: 50%; top: 95%; animation-delay: 0.95s; }
+
+/* 🎬 ANIMACIÓN VIENTO (ZIG-ZAG) */
+@keyframes floatWind {
+
+  0% {
+    transform: translate(0, 0) scale(0.6);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  25% {
+    transform: translate(30px, -50px);
+  }
+
+  50% {
+    transform: translate(-25px, -100px);
+  }
+
+  75% {
+    transform: translate(40px, -160px);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translate(-10px, -230px);
+    opacity: 0;
+  }
+}
+/* ===================================================== */
+/* 🎯 FIX ESPACIADO REACT-SLICK */
+/* ===================================================== */
+
+/* Espacio real debajo del carousel */
+.slick-slider {
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .slick-slider {
+    margin-bottom: 80px;
+  }
+}
+
+/* Evita que el contenido quede pegado */
+.slick-list {
+  padding-bottom: 20px;
+}
+
+/* Ajuste interno */
+.slick-track {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Cada slide con aire */
+.slick-slide > div {
+  padding-bottom: 10px;
+}
